@@ -10,7 +10,7 @@ class Task(models.Model):
         ('discussion', 'Discussion'),
         ('diary', 'Diary'),
     ]
-    user = models.OneToOneField(User, on_delete=models.SET_NULL, null=True)
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     title = models.CharField(max_length=55)
     order_field = models.IntegerField(null=False, blank=False, default=0)
     description = models.TextField(max_length=155)
