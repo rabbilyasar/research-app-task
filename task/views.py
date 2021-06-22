@@ -1,6 +1,6 @@
 from rest_framework import generics
-from .serializers import TaskSerializer
-from .models import Task
+from .serializers import TaskSerializer, TileSerializer
+from .models import Task, Tile
 
 
 class TaskRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
@@ -11,3 +11,13 @@ class TaskRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
 class TaskListCreateAPIView(generics.ListCreateAPIView):
     serializer_class = TaskSerializer
     queryset = Task.objects.all()
+
+
+class TileListCreateAPIView(generics.ListCreateAPIView):
+    serializer_class = TileSerializer
+    queryset = Tile.objects.all()
+
+
+class TileRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = TileSerializer
+    queryset = Tile.objects.all()
