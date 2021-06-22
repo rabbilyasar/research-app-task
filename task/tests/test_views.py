@@ -64,5 +64,4 @@ class TestViews(APITestCase):
         response = self.client.post(reverse('task:tile-create-list'), data=data)
         self.assertTrue(status.is_success(response.status_code))
 
-    # def test_tile_can_be_updated(self):
 
