@@ -22,8 +22,6 @@ class TileSerializer(serializers.ModelSerializer):
 
 
 class TaskSerializer(serializers.ModelSerializer):
-    user = UserSerializer(read_only=True)
-    tile = TileSerializer(read_only=True)
     class Meta:
         model = Task
         fields = '__all__'
