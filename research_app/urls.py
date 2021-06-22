@@ -20,5 +20,5 @@ from django.views.generic.base import RedirectView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', RedirectView.as_view(url='api/task/')),
-    path('api/task/', include('task.api')),
+    path('api/', include('task.api')),
 ]
